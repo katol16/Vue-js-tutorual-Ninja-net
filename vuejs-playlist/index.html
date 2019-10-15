@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>VueJS Tutorials</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="vue-app">
+    <h1>{{ greet('afternoon') }}</h1>
+    <p>Name: {{ name}}</p>
+    <p>Job: {{ job }}</p>
+<!--   UWAGA!!! Tutaj trzeba pamietać, ze ani href={{ website }} ani href="website" ani href="{{website}}"-->
+<!--   Trzeba to zrobić za pomocą data-binding-->
+    <a v-bind:href="website">website</a>
+<!--    Skrócony zapis-->
+<!--    <a :href="webiste">website</a>-->
+
+    <input type="text" v-bind:value="name" />
+
+<!--    Another directive to bind data-->
+<!--    {{ websiteTag }} taknie mzoemy bo zwroci stringa-->
+<!--    Możemy tak:-->
+    <p v-html="websiteTag"></p>
+</div>
+</body>
+
+<script src="app.js"></script>
+</html>
