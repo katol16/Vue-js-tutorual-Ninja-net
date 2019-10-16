@@ -23,6 +23,31 @@
 <!--    {{ websiteTag }} taknie mzoemy bo zwroci stringa-->
 <!--    Możemy tak:-->
     <p v-html="websiteTag"></p>
+
+    Events:
+    <br>
+    Age: {{ age }}
+
+<!--    Użyjemy dyrektywy v-on do click eventow np v-on:click-->
+<!--    <button v-on:click="age++" >Add a Year</button>-->
+<!--    <button v-on:click="age&#45;&#45;">Subtract a YEar</button>-->
+
+<!--    teraz dodamy kod z eventa do metody i odpalimy tę metodę-->
+<!--    Pamiętaj,z e nie musimy dodawać tutaj () do metody, czyli NIE mamy add(),
+        tylko pamietaj, ze tak jest przy eventach,z e jak gdyby nie trzeba tych nawiasow i ze Vue wie,z e ma to wywolac po prostu
+        Nawiasy trzeba dodoać, jak chcemy dodać paramter-->
+        <button v-on:click="add" >Add a Year</button>
+<!--    Skrócony zapis do eventów ponizej-->
+        <button @click="subtract">Subtract a YEar</button>
+        <br>
+        add some value
+        <button v-on:dblclick="add2(2)" >Add a Year</button>
+    <!--    Skrócony zapis do eventów ponizej-->
+        <button @dblclick="subtract2(2)">Subtract a YEar</button>
+        <br>
+        Mouse Event
+<!--    Oczywiście "event" w metodzie do eventów też normlanie dostaniemy i w app.js bedzie updateXY: function(e)-->
+        <div v-on:mousemove="updateXY" id="canvas">{{x}}, {{y}}</div>
 </div>
 </body>
 
