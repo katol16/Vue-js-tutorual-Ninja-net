@@ -11,6 +11,8 @@ new Vue({
         ourText: "",
         a: 0,
         b: 0,
+        available: false,
+        nearby: false
 
         // do przykładu do pracy
     },
@@ -69,5 +71,11 @@ new Vue({
             console.log('addToB');
             return this.b + this.age
         },
+        compClasses: function() {
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
+        }
     }
 });
