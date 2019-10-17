@@ -24,7 +24,7 @@
 <!--    Możemy tak:-->
     <p v-html="websiteTag"></p>
 
-    Events:
+    <h3>Events:</h3>
     <br>
     Age: {{ age }}
 
@@ -34,20 +34,80 @@
 
 <!--    teraz dodamy kod z eventa do metody i odpalimy tę metodę-->
 <!--    Pamiętaj,z e nie musimy dodawać tutaj () do metody, czyli NIE mamy add(),
-        tylko pamietaj, ze tak jest przy eventach,z e jak gdyby nie trzeba tych nawiasow i ze Vue wie,z e ma to wywolac po prostu
-        Nawiasy trzeba dodoać, jak chcemy dodać paramter-->
-        <button v-on:click="add" >Add a Year</button>
+    tylko pamietaj, ze tak jest przy eventach,z e jak gdyby nie trzeba tych nawiasow i ze Vue wie,z e ma to wywolac po prostu
+    Nawiasy trzeba dodoać, jak chcemy dodać paramter-->
+    <button v-on:click="add" >Add a Year</button>
 <!--    Skrócony zapis do eventów ponizej-->
-        <button @click="subtract">Subtract a YEar</button>
-        <br>
-        add some value
-        <button v-on:dblclick="add2(2)" >Add a Year</button>
-    <!--    Skrócony zapis do eventów ponizej-->
-        <button @dblclick="subtract2(2)">Subtract a YEar</button>
-        <br>
-        Mouse Event
+    <button @click="subtract">Subtract a Year</button>
+    <br>
+    add some value
+    <button v-on:dblclick="add2(2)" >Add a Year</button>
+<!--    Skrócony zapis do eventów ponizej-->
+    <button @dblclick="subtract2(2)">Subtract a YEar</button>
+    <br>
+    <h3>Mouse Event</h3>
 <!--    Oczywiście "event" w metodzie do eventów też normlanie dostaniemy i w app.js bedzie updateXY: function(e)-->
-        <div v-on:mousemove="updateXY" id="canvas">{{x}}, {{y}}</div>
+    <div v-on:mousemove="updateXY" id="canvas">{{x}}, {{y}}</div>
+    <br>
+
+    <h3>Event modifiers</h3>
+    <br>
+    Załóżmy, ze chcemy aby poniższy event wykonał się tylko raz,
+    uzyjemy do tego .once modifier
+    <button v-on:click.once="add" >Add a Year only once</button>
+    <br>
+
+    Poniżej chcemy, zeby tylko pokazał alert a nie przenosił nas na link,
+    użyjemy dot ego .prevent
+    <a v-on:click.prevent="click" href="http://www.google.pl">google</a>
+    wygoogluj sobie event modifiers i bedziesz miał możłiwe modifie do eventow<br>
+
+    <h3>Keybord Events</h3>
+    <label>Name:</label>
+
+<!--        W poniższym przypadku, console.log pokaze nam sie za kazdym razem gdy coś wpiszmey (podniesiemy przycisk)-->
+<!--        <input type="text" v-on:keyup="logName">-->
+<!--        <label>Age:</label>-->
+<!--        <input type="text" v-on:keyup="logAge">-->
+
+<!--        Zrobimy teraz przypadek gdzie console.log wyświetli się po naciśnięciu enter, wiec dodamy modifier -->
+    <input type="text" v-on:keyup.enter="logName">
+    <label>Age:</label>
+    Zrobimy modifier zeby nacisnac alt i enter
+    <input type="text" v-on:keyup.alt.enter="logAge">
+
+    <br>
+    <h3>Two way data binding za pomocą v-model</h3>
+    <input type="text" v-model="ourText">
+    <span>{{ourText}}</span>
+    <br>
+
+    <h3>Computed properties</h3>
+    <button v-on:click="a++">Add to A</button>
+    <button v-on:click="b++">Add to B</button>
+    <p>A - {{a}}</p>
+    <p>B - {{b}}</p>
+<!--        <p>Age + A = {{addToA()}}</p>-->
+<!--        <p>Age + B = {{addToB()}}</p>-->
+<!--    Powyższe działa tak, ze za każdym razem jak zmeinieamy a lub, to te funckje addToA i addToB się wykonują, niezaleznie czy zmieniamy tylko A, addToB tez sie wykona.-->
+<!--    Pokażemy to w console.log-->
+
+<!--    Żeby zapobiec temu, co jest opisane powyżej użyjemy Computed properties, wtedy jak zmienimy a to wykona sie tylko addToA i analogicznie z B.
+    Trzeba jeszcze pamiętać, żeby teraz usunąć nawiasy, bo inaczej wyrzuci błąd -->
+    <p>Age + A = {{addToA}}</p>
+    <p>Age + B = {{addToB}}</p>
+<!--        Pamiętaj, że warto używać computed zamiast methods, bo metody nie wiedza kiedy wywołać odpowiednią metodę.-->
+<!--        Natmoast compoted w pewien sposó obserwuje zmiany i wywołuje tylko to co trzeba-->
+
+
+    <br><br><br>
+    Przykład do pracy:
+    <span @click="show">Show</span>
+    <ul>
+        <li>
+            element
+        </li>
+    </ul>
 </div>
 </body>
 
