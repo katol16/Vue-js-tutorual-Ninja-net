@@ -12,8 +12,15 @@ new Vue({
         a: 0,
         b: 0,
         available: false,
-        nearby: false
-
+        nearby: false,
+        error: false,
+        success: false,
+        characters: ["Mario", "luigi", "Yoshi", 'Bowser'],
+        ninjas: [
+            { name: "Ryu", age: 35 },
+            { name: "Youshi", age: 35 },
+            { name: "Ken", age: 35 }
+        ]
         // do przykładu do pracy
     },
     methods: {

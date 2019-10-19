@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>VueJS Tutorials</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <!-- bag image -->
+        <!-- Poniżej klasa burst zostanie dodana jak ended jest rwone true-->
+        <div v-bind:class="{ burst: ended }" id="bag"></div>
+
+        <!-- bag health -->
+        <div id="bag-health">
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+
+        <!-- game controls -->
+        <div id="controls">
+            <button v-show="!ended" v-on:click="punch">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+</html>

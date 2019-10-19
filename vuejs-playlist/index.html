@@ -113,16 +113,83 @@
     <div v-bind:class="compClasses">
         <span>Ryu 2</span>
     </div>
+    <br>
 
+    <h3>Conditionals</h3>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+<!--    <p v-if="error">This is error</p>-->
+<!--    with v-else-if-->
+<!--    <p v-else-if="success">This is success</p>-->
+<!--    <p v-if="success">This is success</p>-->
 
-    <br><br><br>
-    Przykład do pracy:
-    <div @click="show">Show</div>
+<!--    Dyrektywa v-show, rozncia w dzialaniu jest taka, ze v-if usunie element całkowicie, jak gonie poakzuje
+        a w v=show daje dispay: none , nie usuwa elementu z DOM-->
+    <p v-show="error">This is error</p>
+    <p v-show="success">This is success</p>
+    <br>
+
+    <h3>Looping with v-for</h3>
+    Looping through lists
     <ul>
-        <li>
-            element
+<!--        Pamiętaj, ze tutaj tylko "characters" odnosi się do jakiejś właściwości-->
+<!--        character może być nazwane jako "x", podbnie jak przy użyciu .map-->
+        <li v-for="character in characters">
+            {{ character }}
         </li>
     </ul>
+<!--    teraz powyższy przykłąd z indexem-->
+    <ul>
+        <li v-for="(character, index) in characters">
+            {{ index }} dalej {{ character }}
+        </li>
+    </ul>
+
+    Drugi przykłąd
+
+    <ul>
+        <li v-for="ninja in ninjas">
+            {{ ninja.name }} i jego age to {{ninja.age}}
+        </li>
+    </ul>
+<!--    teraz jeżeli w powyższym przykąłdzie chcemy też mieć indeks danego elementu to:-->
+    <ul>
+        <li v-for="(ninja, index) in ninjas">
+            index {{ index }} i dalej {{ ninja.name }} i jego age to {{ninja.age}}
+        </li>
+    </ul>
+
+    kolejny przykład (troche chujowy, bo tu też wyrzuci wiele divów
+    <div v-for="(ninja,index) in ninjas">
+        <p>{{index}} - {{ninja.name}}</p>
+    </div>
+
+    Poniższy przykłąd jest dobry, bo zwróci tylko tagi "p"
+    <template v-for="(ninja,index) in ninjas">
+        <p>{{index}} - {{ninja.name}}</p>
+    </template>
+
+    Looping through object
+    <template v-for="ninja in ninjas">
+<!--        // Poniżej beirzmey key and value i loopujemy rpzez object ninja-->
+<!--        // w taki sposób możemy też zwrócić jakaś wartość nie znając jej klucza-->
+        <div v-for="(val,key) in ninja">
+            <p>{{key}} - {{val}}</p>
+        </div>
+    </template>
+
+    <br>
+    <br>
+    <br>
+    <br>
+<!--    <br><br><br>-->
+<!--    Przykład do pracy:-->
+<!--    <div @click="show">Show</div>-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--            element-->
+<!--        </li>-->
+<!--    </ul>-->
 </div>
 </body>
 
