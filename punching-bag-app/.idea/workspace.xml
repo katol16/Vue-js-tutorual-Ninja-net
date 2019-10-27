@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50918288-878f-410d-98a8-c42367530c98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../vuejs-playlist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vuejs-playlist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vuejs-playlist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../vuejs-playlist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +22,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ArgueSide" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571499457435</updated>
       <workItem from="1571499458547" duration="2814000" />
+      <workItem from="1571594791662" duration="1204000" />
     </task>
     <servers />
   </component>
@@ -59,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
