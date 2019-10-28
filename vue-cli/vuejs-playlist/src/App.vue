@@ -1,13 +1,26 @@
 <template>
     <div>
-        {{ title }}
         <p>{{ greeting() }}</p>
+        {{ title }}
+
+        // Globalne uzycie komponentu. Musimy go globalnie zarejestrować
+        <ninjas/>
+
+        // Lokalne użycie komponentu
+        <ninjasRegisteredLocally/>
     </div>
 </template>
 
 <script>
+// importowanie komponentu
+import LocallyNinjas from "./components/Ninjas.vue";
 
 export default {
+// rejestrowanie lokalne komponentu
+  components: {
+      'ninjasRegisteredLocally': LocallyNinjas
+  },
+
 // Pamiętaj, że tutaj ten zapis któ©ego używasz i ten poniżśzy to to samo
 // to tylko nowy ES6 feature
 // Stary zapis (działą taks amo)
@@ -16,10 +29,9 @@ export default {
 //           message: "Wiadomość od Karola"
 //       }
 //   },
-
   data() {
       return {
-          title: "Wiadomość od Karola"
+          title: "Ninja App"
       }
   },
     methods: {
