@@ -1,5 +1,7 @@
 <template>
     <div>
+<!--        // Jeśli w Ninjas.vue nie zrobimy scoped styles, to ten header1 <h1> wezmie gobalny styl zapisany w Ninjas-->
+        <h1>List of ninjas</h1>
         <p>{{ greeting() }}</p>
         {{ title }}
 
@@ -46,14 +48,21 @@ export default {
     }
 }
 </script>
+<!--/*jak tutaj dodamy styl do h1, to ponieważ style są globalne bo nie mają scoped, to to nadpsize style dla h1 do wszystkich h1 w projekcie*/-->
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 60px;
+    }
+
+/*<!--!*jak tutaj dodamy styl do h1, to ponieważ style są globalne bo nie mają scoped, to to nadpsize style dla h1 do wszystkich h1 w projekcie*!-->*/
+/*h1 {*/
+/*    color: blue;*/
+/*}*/
+
 </style>
